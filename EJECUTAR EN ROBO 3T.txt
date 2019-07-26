@@ -1,0 +1,149 @@
+/*
+ * Script que se encarga de poblar la base de datos  
+ * 
+ */
+
+//Host donde está nuestra base de datos, no tiene que ser nuestro equipo local, puede ser cualquier mongoDb.
+conn = new Mongo("localhost");
+//Nombre de la base de datos que vamos a utilizar
+db = conn.getDB("PruebaMonolegal");
+
+/*Limpiamos la base de datos por si existia algo antes*/
+db.dropDatabase();
+
+
+/*coleciones de nuestro modelo de datos*/
+db.createCollection("facturas");
+
+factura1 = {
+  
+  "CodigoFactura": "P-00001",
+  "Cliente": "Cliente 1",
+  "Ciudad": "Ciudad 1",
+  "Nit": "111111111",
+  "Email": "malemurillo15@gmail.com",
+  "TotalFactura": 19278,
+  "Subtotal": 16200,
+  "Iva": 3078,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-20T10:36:14.197Z"),
+  "Estado": "primerrecordatorio",
+  "Paga": false
+
+}
+
+factura2 = {
+  "CodigoFactura": "P-00002",
+  "Cliente": "Cliente 1",
+  "Ciudad": "Ciudad 1",
+  "Nit": "111111111",
+  "Email": "malemurillo15@gmail.com",
+  "TotalFactura": 21539,
+  "Subtotal": 18100,
+  "Iva": 3439,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-20T12:36:14.197Z"),
+  "Estado": "primerrecordatorio",
+  "Paga": false
+}
+
+
+factura3 = {
+  "CodigoFactura": "P-00003",
+  "Cliente": "Cliente 1",
+  "Ciudad": "Ciudad 1",
+  "Nit": "111111111",
+  "Email": "malemurillo15@gmail.com",
+  "TotalFactura": 9520,
+  "Subtotal": 8000,
+  "Iva": 1520,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-20T11:56:14.197Z"),
+  "Estado": "primerrecordatorio",
+  "Paga": false
+}
+
+factura4 ={
+  "CodigoFactura": "P-00004",
+  "Cliente": "Cliente 2",
+  "Ciudad": "Ciudad 2",
+  "Nit": "22222222",
+  "Email": "alejandramurillo1510@outlook.es",
+  "TotalFactura": 17850,
+  "Subtotal": 15000,
+  "Iva": 2850,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-21T11:56:14.197Z"),
+  "Estado": "segundorecordatorio",
+  "Paga": false	
+}
+
+factura5{
+  "CodigoFactura": "P-00005",
+  "Cliente": "Cliente 3",
+  "Ciudad": "Ciudad 3",
+  "Nit": "33333333",
+  "Email": "mamurillo54@misena.edu.co",
+  "TotalFactura": 11067,
+  "Subtotal": 9300,
+  "Iva": 1767,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-22T09:56:14.197Z"),
+  "Paga": false
+
+}
+
+factura6 = {
+  "CodigoFactura": "P-00006",
+  "Cliente": "Cliente 3",
+  "Ciudad": "Ciudad 3",
+  "Nit": "33333333",
+  "Email": "mamurillo54@misena.edu.co",
+  "TotalFactura": 5950,
+  "Subtotal": 5000,
+  "Iva": 950,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-22T10:56:14.197Z"),
+  "Paga": false
+    
+  
+};
+
+factura7 = {
+  "CodigoFactura": "P-00007",
+  "Cliente": "Cliente 3",
+  "Ciudad": "Ciudad 3",
+  "Nit": "33333333",
+  "Email": "mamurillo54@misena.edu.co",
+  "TotalFactura": 7140,
+  "Subtotal": 6000,
+  "Iva": 1140,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-22T11:56:14.197Z"),
+  "Paga": false
+  
+};
+
+factura8 = {
+  "CodigoFactura": "P-00008",
+  "Cliente": "Cliente 3",
+  "Ciudad": "Ciudad 3",
+  "Nit": "33333333",
+  "Email": "mamurillo54@misena.edu.co",
+  "TotalFactura": 17850,
+  "Subtotal": 15000,
+  "Iva": 2850,
+  "Retencion": 0,
+  "FechaCreacion":ISODate("2019-07-22T12:56:14.197Z"),
+  "Paga": false
+};
+
+db.facturas.insert(factura1);
+db.facturas.insert(factura2);
+db.facturas.insert(factura3);
+db.facturas.insert(factura4);
+db.facturas.insert(factura5);
+db.facturas.insert(factura6);
+db.facturas.insert(factura7);
+db.facturas.insert(factura8);
+
