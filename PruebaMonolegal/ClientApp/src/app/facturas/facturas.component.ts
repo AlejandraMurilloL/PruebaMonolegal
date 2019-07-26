@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class FacturasComponent implements OnInit {
 
   public facturas: Factura[];
-  public notificar: Observable<string>;
+  public enviado: boolean;
 
   constructor(private router: Router, private dataService: DataService) {  }
 
@@ -24,7 +24,7 @@ export class FacturasComponent implements OnInit {
 
   notificarTodos() {
     this.dataService.notificarClientes().subscribe(result => { this.facturas = result }, error => { console.log(<any>error); });
-    console.log(this.facturas);
+    this.enviado = true;
   }
 
   ngOnInit() {

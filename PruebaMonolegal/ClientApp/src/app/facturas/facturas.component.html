@@ -1,6 +1,7 @@
 <h1>Lista de facturas</h1>
 
 <p *ngIf="!facturas"><em>Loading...</em></p>
+<p *ngIf="enviado"><em>Los correos se han enviado correctamente</em></p>
 
 <table class='table' *ngIf="facturas">
   <thead>

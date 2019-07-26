@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FacturasComponent } from './facturas/facturas.component';
 import { DataService } from './data.service';
 
@@ -14,7 +13,6 @@ import { DataService } from './data.service';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    FetchDataComponent,
     FacturasComponent
   ],
   imports: [
