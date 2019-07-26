@@ -1,0 +1,39 @@
+<h1>Lista de facturas</h1>
+
+<p *ngIf="!facturas"><em>Loading...</em></p>
+
+<table class='table' *ngIf="facturas">
+  <thead>
+    <tr>
+      <th>Código factura</th>
+      <th>Cliente</th>
+      <th>Nit</th>
+      <th>Ciudad</th>
+      <th>Total Factura</th>
+      <th>Subtotal</th>
+      <th>Iva</th>
+      <th>Retención</th>
+      <th>Fecha Creación</th>
+      <th>Estado</th>
+      <th>Paga</th>
+      <th>Fecha Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let factura of facturas">
+      <td>{{ factura.codigoFactura }}</td>
+      <td>{{ factura.cliente }}</td>
+      <td>{{ factura.nit }}</td>
+      <td>{{ factura.ciudad }}</td>
+      <td>{{ factura.totalFactura }}</td>
+      <td>{{ factura.subtotal }}</td>
+      <td>{{ factura.iva }}</td>
+      <td>{{ factura.retencion }}</td>
+      <td>{{ factura.fechaCreacion }}</td>
+      <td>{{ factura.estado }}</td>
+      <td>{{ factura.paga }}</td>
+      <td *ngIf="factura.fechaPago">{{ factura.fechaPago }}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" (click)="notificarTodos();">Notificar Clientes</button>
