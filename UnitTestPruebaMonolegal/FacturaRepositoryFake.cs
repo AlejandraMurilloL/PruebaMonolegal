@@ -12,7 +12,7 @@ namespace UnitTestPruebaMonolegal
         private List<Factura> _facturas;
 
         public FacturaRepositoryFake()
-        {
+        {   //Creamos Lista simulando los registros de la base de datos
             _facturas = new List<Factura>()
             {
                 new Factura() { CodigoFactura = "P-00001", Cliente = "Cliente 1",Nit = "11111111",Email = "malemurillo15@gmail.com",Ciudad = "Ciudad 1",TotalFactura = 19278,Subtotal = 16200,Iva = 3078,Retencion = 0, FechaCreacion = new DateTime(2019,07,20),Estado =  "primerrecordatorio", Paga = false },
@@ -27,12 +27,16 @@ namespace UnitTestPruebaMonolegal
              };
          }
 
-
+        
         public IEnumerable<Factura> GetAll()
         {
-             return _facturas;
+            //Retornamos la lista de simulación
+            return _facturas;
         }
 
+        /// <summary>
+        /// Con este método simulamos el proceso de envio de correo y actualización de los items de la lista
+        /// </summary>
         public void NotificarTodos()
         {
             Dictionary<string, string> listaPrimer = new Dictionary<string, string>();
@@ -58,14 +62,17 @@ namespace UnitTestPruebaMonolegal
 
         }
                          
-
+        /// <summary>
+        /// Actualizamos las facturas en la lista según su Código de factura
+        /// </summary>
+        /// <param name="CodigoFactura"></param>
+        /// <param name="factura"></param>
         public void Update(string CodigoFactura, Factura factura)
         {
             var antiguo = _facturas.Find(x => x.CodigoFactura == CodigoFactura);
 
             _facturas.Remove(antiguo);
-            _facturas.Add(factura);
-           
+            _facturas.Add(factura);          
             
         }
 
@@ -84,6 +91,7 @@ namespace UnitTestPruebaMonolegal
                 Update(item.CodigoFactura, item);
             }
         }
+
 
         public void EnviarEmails(Dictionary<string, string> listaPrimer, Dictionary<string, string> listaSegundo, Dictionary<string, string> listaAcumulado)
         {

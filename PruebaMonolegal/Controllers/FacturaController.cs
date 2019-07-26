@@ -20,7 +20,6 @@ namespace PruebaMonolegal.Controllers
             _facturaRepository = facturaRepository;
         }
 
-
         [HttpGet("[action]")]
         public IEnumerable<Factura> GetAll()
         {
