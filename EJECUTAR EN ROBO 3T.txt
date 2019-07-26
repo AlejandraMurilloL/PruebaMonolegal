@@ -78,7 +78,7 @@ factura4 ={
   "Paga": false	
 }
 
-factura5{
+factura5 = {
   "CodigoFactura": "P-00005",
   "Cliente": "Cliente 3",
   "Ciudad": "Ciudad 3",
